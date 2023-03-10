@@ -1,7 +1,7 @@
 {
-	"name": "smart_invariant",
+	"name": "smart-invariant",
 	"version": "1.0.2",
-	"description": "Like invariant and tiny_invariant, but smarter",
+	"description": "Like invariant and tiny-invariant, but smarter",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "tsc",

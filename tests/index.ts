@@ -1,6 +1,6 @@
 import assert from "../src/index";
 import { expect, test, vi, assertType } from "vitest";
-test("should include a provided message when an invariant does throw", () => {
+test("should include a provided message when an assert does throw", () => {
 	try {
 		assert(false, "my message");
 	} catch (e) {
@@ -9,13 +9,13 @@ test("should include a provided message when an invariant does throw", () => {
 	}
 });
 
-test("should not execute the optional function if the invariant does not throw", () => {
+test("should not execute the optional function if the assert does not throw", () => {
 	const optional_execution = vi.fn();
 	assert(true, "won't throw", optional_execution);
 	expect(optional_execution.mock.calls.length).toEqual(0);
 });
 
-test("should execute a message function if the invariant does throw", () => {
+test("should execute a message function if the assert does throw", () => {
 	const message = vi.fn();
 	try {
 		assert(false, "will throw", () => message("foo"));
