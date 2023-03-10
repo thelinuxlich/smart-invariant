@@ -4,7 +4,7 @@ Like `invariant` and `tiny-invariant`, but smarter.
 
 Differences from both
 
-- Although it's called `smart_invariant`, we suggest you import it as `assert`, because it's shorter and more readable
+- Although it's called `smart-invariant`, we suggest you import it as `assert`, because it's shorter and more readable
 - No prefix
 - No dependency on `process.env.NODE_ENV`, the message will be sent whether NODE_ENV is production or not
 - No bundling shenanigans (removing the asserts in production, quite the contrary, we WANT to assert!)
