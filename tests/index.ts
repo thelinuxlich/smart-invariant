@@ -44,6 +44,6 @@ test("should correctly narrow a type (custom type)", () => {
 
 	const lula: Nullable<Person> = tryGetPerson("Lula");
 
-	assert(lula, "Alex is not null");
+	assert(lula, "Lula is not null");
 	assertType<Person>(lula);
 });
