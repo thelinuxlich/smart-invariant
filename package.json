@@ -1,6 +1,6 @@
 {
 	"name": "smart-invariant",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Like invariant and tiny-invariant, but smarter",
 	"main": "dist/index.js",
 	"type": "module",
