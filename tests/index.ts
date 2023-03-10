@@ -18,7 +18,7 @@ test("should not execute the optional function if the assert does not throw", ()
 test("should execute a message function if the assert does throw", () => {
 	const message = vi.fn();
 	try {
-		assert(false, "will throw", () => message("foo"));
+		assert(false, "will throw", message);
 	} catch (e) {
 		expect(e).toBeInstanceOf(Error);
 		expect(message.mock.calls.length).toBeGreaterThan(0);
