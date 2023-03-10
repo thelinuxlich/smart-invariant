@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ES2015",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "declaration": true,
+        "isolatedModules": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowUnreachableCode": false,
+        "noUncheckedIndexedAccess": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "dist"
+    },
+    "include": ["src/index.ts"]
+}
