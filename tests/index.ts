@@ -7,6 +7,12 @@ test("should include a provided message when an assert does throw", () => {
 		expect(e).toBeInstanceOf(Error);
 		expect(e.message).toEqual("my message");
 	}
+	try {
+		assert(false);
+	} catch (e) {
+		expect(e).toBeInstanceOf(Error);
+		expect(e.message).toEqual("Assertion failed");
+	}
 });
 
 test("should not execute the optional function if the assert does not throw", () => {
