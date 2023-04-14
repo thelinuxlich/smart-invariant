@@ -1,5 +1,4 @@
-import assert from "../src/index";
-import { AssertError } from "../src/index";
+import { assert, AssertError } from "../src/index";
 import { expect, test, vi, assertType } from "vitest";
 test("should include a provided message when an assert does throw", () => {
 	try {
@@ -27,7 +26,7 @@ test("should execute a message function if the assert does throw", () => {
 	try {
 		assert(false, "will throw", message);
 	} catch (e) {
-		expect(e).toBeInstanceOf(Error);
+		expect(e).toBeInstanceOf(AssertError);
 		expect(message.mock.calls.length).toBeGreaterThan(0);
 		expect(e.message).toEqual("will throw");
 	}
@@ -41,16 +40,14 @@ test("should correctly narrow a type (boolean)", () => {
 	} catch {}
 });
 
-test("should correctly narrow a type (custom type)", () => {
-	type Nullable<T> = T | null;
-	type Person = { name: string };
+type Nullable<T> = T | null;
+type Person = { name: string };
 
+test("should correctly narrow a type (custom type)", () => {
 	function tryGetPerson(name: string): Nullable<Person> {
 		return { name };
 	}
-
 	const lula: Nullable<Person> = tryGetPerson("Lula");
-
 	assert(lula, "Lula is not null");
 	assertType<Person>(lula);
 });
