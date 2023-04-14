@@ -1,3 +1,5 @@
+export class AssertError extends Error {}
+
 // assert conveys a better message than invariant, and it's shorter to type.
 export default function assert(
 	condition: any,
@@ -10,5 +12,5 @@ export default function assert(
 	if (typeof optional_execution === "function") {
 		optional_execution(message);
 	}
-	throw new Error(message);
+	throw new AssertError(message);
 }

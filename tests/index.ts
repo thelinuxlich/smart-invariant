@@ -1,16 +1,17 @@
 import assert from "../src/index";
+import { AssertError } from "../src/index";
 import { expect, test, vi, assertType } from "vitest";
 test("should include a provided message when an assert does throw", () => {
 	try {
 		assert(false, "my message");
 	} catch (e) {
-		expect(e).toBeInstanceOf(Error);
+		expect(e).toBeInstanceOf(AssertError);
 		expect(e.message).toEqual("my message");
 	}
 	try {
 		assert(false);
 	} catch (e) {
-		expect(e).toBeInstanceOf(Error);
+		expect(e).toBeInstanceOf(AssertError);
 		expect(e.message).toEqual("Assertion failed");
 	}
 });
